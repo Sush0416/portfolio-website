@@ -5,8 +5,7 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  // Add this if you're using GitHub Pages
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/portfolio-website/' : '',
+  // Remove assetPrefix for Vercel as it handles this automatically
 }
 
-module.exports = nextConfig
+module.exports = nextConfig;
