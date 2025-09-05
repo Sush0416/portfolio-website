@@ -1,0 +1,56 @@
+import { motion } from 'framer-motion';
+
+const skills = {
+  "Programming": ["Python", "C++", "Java", "JavaScript"],
+  "AI/ML & Data": ["Pandas", "NumPy", "OpenCV", "TensorFlow", "Scikit-learn"],
+  "Web Development": ["MERN Stack", "HTML/CSS", "REST APIs", "Stripe Integration"],
+  "Databases": ["MySQL", "Oracle DBMS", "MongoDB"],
+  "Tools": ["Git", "GitHub", "Power BI", "Matplotlib", "Plotly"]
+};
+
+export default function Skills() {
+  return (
+    <section id="skills" className="py-20 px-4 bg-gray-900/50">
+      <div className="max-w-6xl mx-auto">
+        <motion.h2 
+          className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          Technical Skills
+        </motion.h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {Object.entries(skills).map(([category, items], categoryIndex) => (
+            <motion.div
+              key={category}
+              className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-purple-600 transition-colors"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: categoryIndex * 0.1 }}
+            >
+              <h3 className="text-xl font-semibold text-purple-400 mb-4">{category}</h3>
+              <div className="flex flex-wrap gap-2">
+                {items.map((skill, index) => (
+                  <motion.span
+                    key={skill}
+                    className="px-3 py-2 bg-purple-900/30 text-purple-300 rounded-lg text-sm"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: categoryIndex * 0.1 + index * 0.05 }}
+                    whileHover={{ scale: 1.05, backgroundColor: "rgba(112, 26, 117, 0.5)" }}
+                  >
+                    {skill}
+                  </motion.span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
