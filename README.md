@@ -104,9 +104,9 @@ Edit the data in data/portfolio-data.js:
 
 javascript
 export const personalData = {
-  name: "Your Name",
-  title: "Your Title",
-  email: "your.email@example.com",
+  name: "Sushmita Katariya",
+  title: "Portfolio",
+  email: "sushmitakatariya18@gmail.com",
   // ... other personal details
 };
 Adding Projects
@@ -115,11 +115,11 @@ Update the projectsData array in data/portfolio-data.js:
 javascript
 export const projectsData = [
   {
-    title: "Project Name",
-    description: "Project description",
-    technologies: ["React", "Node.js"],
-    githubUrl: "https://github.com/yourusername/project",
-    liveUrl: "https://yourproject.com",
+    title: "Portfolio",
+    description: "AI Engineer Portfolio - A modern Next.js website showcasing my AI/ML projects, technical skills, and full-stack development expertise with responsive design and smooth animations.",
+    technologies: ["Re)eact", "Node.js"],
+    githubUrl: "https://github.com/Sush0416/portfolio-website",
+    liveUrl: "https://portfolio-website-ivap.vercel.app/",
     image: "/project-image.jpg"
   }
 ];
