@@ -21,13 +21,13 @@ const projects = [
     status: "Prototype"
   },
   {
-    title: "DSA Visualizer",
-    description: "Interactive tool to visualize Data Structures & Algorithms with step-by-step animations. Arrays & Linked Lists complete; Trees planned.",
-    technologies: ["Algorithms", "Education"],
-    github: "https://github.com/Sush0416",
-    demo: "#",
-    image: "/DSA Visualizer.jpg", // Coding / algorithm
-    status: "Planned"
+    title: "Salesforce PropertyHub",
+    description: "A comprehensive property management platform built on Salesforce, featuring property listings, agent management, and customer relationship tools with advanced search and filtering capabilities.",
+    technologies: ["Salesforce", "Apex", "LWC", "SOQL"],
+    github: "https://github.com/Sush0416/Salesforce-PropertyHub",
+    demo: "https://drive.google.com/file/d/1rbOnT48EHK4az6ApF_IToi-vNeVVPLSa/view?usp=sharing",
+    image: "/propertyhub.jpg", 
+    status: "Completed"
   }
 ];
 
@@ -65,7 +65,15 @@ export default function Projects() {
 
               {/* Project Status */}
               {project.status && (
-                <span className="inline-block mb-3 px-3 py-1 text-xs rounded-full bg-gray-700 text-gray-300">
+                <span className={`inline-block mb-3 px-3 py-1 text-xs rounded-full ${
+                  project.status === "Completed" 
+                    ? "bg-green-900/30 text-green-300"
+                    : project.status === "In Progress"
+                    ? "bg-blue-900/30 text-blue-300"
+                    : project.status === "Prototype"
+                    ? "bg-yellow-900/30 text-yellow-300"
+                    : "bg-gray-700 text-gray-300"
+                }`}>
                   {project.status}
                 </span>
               )}
